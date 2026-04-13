@@ -290,11 +290,117 @@
     font-size: 12px;
   }
 }
-  </style></head>
+.pricing {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.pricing-intro {
+  margin-bottom: 40px;
+  color: #7a6a60;
+}
+
+.pricing-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.price-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  width: 280px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.price-card.highlight {
+  transform: scale(1.05);
+  border: 2px solid #c19a7b;
+}
+
+.price {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.price-card ul {
+  padding-left: 18px;
+  margin: 15px 0;
+}
+
+.price-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 30px;
+  background: #c19a7b;
+  color: white;
+  text-decoration: none;
+}
+.soft-pricing, .pricing-trust, .pricing-cta {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.price-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.price-card {
+  width: 260px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  text-align: left;
+}
+
+.price-card.highlight {
+  border: 2px solid #c19a7b;
+  transform: scale(1.05);
+}
+
+.price {
+  font-weight: bold;
+  margin: 10px 0;
+  color: #c19a7b;
+}
+
+.pricing-trust p {
+  max-width: 700px;
+  margin: 10px auto;
+  color: #5f5147;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 20px;
+  border-radius: 30px;
+  background: #c19a7b;
+  color: white;
+  text-decoration: none;
+}
+  </style>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+</style>
+</head>
 <body><div class="nav">
   <a href="#about">Über mich</a>
   <a href="#services">Angebote</a>
   <a href="#process">Ablauf</a>
+  <a href="#preise">Preise</a>
   <a href="#contact">Kontakt</a>
 </div><!-- HERO --><div class="hero">
   <div class="hero-content">
@@ -325,8 +431,15 @@
       <div class="story-item">
         <img src="./assets/pregnant1.jpg?auto=format&fit=crop&w=1200&q=80">
         <div class="story-text">
-          <h3>Ankommen in der Schwangerschaft</h3>
-          <p>Sanftes Einstimmen, Vertrauen in deinen Körper entwickeln.</p>
+          <h3>Kinderwunsch & Planung</h3>
+          <p>Der Weg zu einem Kind beginnt oft lange vor der Schwangerschaft. Ich begleite dich in dieser sensiblen Phase mit Ruhe, Klarheit und emotionaler Stabilität. Raum für Sehnsucht, Fragen, vergangene Erfahrungen und die Rückverbindung zu deinem Körper und deinem Zyklus.</p>
+        </div>
+      </div>
+      <div class="story-item">
+        <img src="./assets/pregnant1.jpg?auto=format&fit=crop&w=1200&q=80">
+        <div class="story-text">
+          <h3>Begleitung während der Schwangerschaft</h3>
+          <p>Einfühlsame Begleitung durch deine Schwangerschaft mit Gesprächen, Ritualen, Kräuterwissen und emotionaler Unterstützung. Damit du dich sicher, getragen und verbunden mit dir und deinem Baby fühlst.</p>
         </div>
       </div>
 
@@ -342,7 +455,7 @@
         <img src="./assets/baby1.jpg?auto=format&fit=crop&w=1200&q=80">
         <div class="story-text">
           <h3>Die Geburt</h3>
-          <p>Ich bin an deiner Seite – ruhig, präsent, stärkend.</p>
+          <p>Ruhige und konstante Präsenz während deiner Geburt. Ich bin an deiner Seite – stabil, stärkend und intuitiv durch jeden Moment hindurch.</p>
         </div>
       </div>
 
@@ -350,7 +463,14 @@
         <img src="./assets/baby2.jpg?auto=format&fit=crop&w=1200&q=80">
         <div class="story-text">
           <h3>Wochenbett & Ankommen</h3>
-          <p>Heilung, Ruhe und sanftes Ankommen als Familie.</p>
+          <p>Das Ankommen als Familie braucht Zeit, Ruhe und Schutz. Ich unterstütze dich emotional und praktisch im Wochenbett, helfe bei Stillen, Alltag und Rückbildung und gebe dir den Raum, wirklich anzukommen.</p>
+        </div>
+      </div>
+      <div class="story-item">
+        <img src="./assets/baby2.jpg?auto=format&fit=crop&w=1200&q=80">
+        <div class="story-text">
+          <h3>Kinderbetreuung & Entlastung</h3>
+          <p>Liebevolle, achtsame Betreuung deines Babys oder deiner Kinder bei dir zuhause. Damit du schlafen, durchatmen oder Termine wahrnehmen kannst – in Sicherheit, Vertrauen und Ruhe.</p>
         </div>
       </div>
 
@@ -361,24 +481,43 @@
   </div>
 </section>
   <h2>Angebote</h2>
-  <div class="grid">
-    <div class="card">
-      🤰 Schwangerschaftsbegleitung
-      <p>Einfühlsame Begleitung, Rituale, Gespräche, Kräuterwissen und emotionale Unterstützung.</p>
-    </div>
-    <div class="card">
-      🌸 Geburtsbegleitung
-      <p>Ruhige, konstante Präsenz während deiner Geburt – dein sicherer Anker.</p>
-    </div>
-    <div class="card">
-      🕊 Wochenbett
-      <p>Unterstützung im Alltag, Stillhilfe, emotionale Stabilität und Entlastung.</p>
-    </div>
-    <div class="card">
-      🌿 Kräuter & ganzheitliche Begleitung
-      <p>Sanfte Pflanzenkraft für Schwangerschaft, Geburt und Rückbildung.</p>
-    </div>
+<div class="grid">
+  <div class="card">
+    🌷 Kinderwunsch & Planung
+    <p>Ein Kind beginnt oft als Gefühl. Ich begleite dich dabei, Vertrauen in deinen Körper zu entwickeln, Klarheit zu finden und dich innerlich auf dein Baby vorzubereiten – in deinem Tempo, ohne Druck.</p>
+    <a href="#kinderwunsch" class="card-link">Mehr erfahren →</a>
   </div>
+
+  <div class="card">
+    🤰 Schwangerschaftsbegleitung
+    <p>Du musst diese Zeit nicht allein tragen. Ich begleite dich einfühlsam durch deine Schwangerschaft – mit Gesprächen, Ruhe und Stabilität, damit du dich sicher und getragen fühlst.</p>
+    <a href="#schwangerschaft" class="card-link">Mehr erfahren →</a>
+  </div>
+
+  <div class="card">
+    🌸 Geburtsbegleitung
+    <p>In einem der intensivsten Momente deines Lebens bin ich an deiner Seite. Ich gebe dir Halt, Orientierung und erinnere dich daran, wie stark du bist – damit du deiner Geburt vertrauen kannst.</p>
+    <a href="#geburt" class="card-link">Mehr erfahren →</a>
+  </div>
+
+  <div class="card">
+    🕊 Wochenbett & Nachsorge
+    <p>Nach der Geburt beginnt das echte Ankommen. Ich unterstütze dich im Alltag, beim Stillen und emotional – damit du in Ruhe in deiner neuen Rolle wachsen kannst.</p>
+    <a href="#wochenbett" class="card-link">Mehr erfahren →</a>
+  </div>
+
+  <div class="card">
+    🌿 Kräuter & ganzheitliche Begleitung
+    <p>Sanfte Pflanzenkraft kann dich in jeder Phase unterstützen – für mehr Ruhe, Heilung und ein gutes Körpergefühl, abgestimmt auf dich und deine Bedürfnisse.</p>
+    <a href="#kraeuter" class="card-link">Mehr erfahren →</a>
+  </div>
+
+  <div class="card">
+    🌱 Kinderbetreuung & Entlastung
+    <p>Du darfst auch mal loslassen. Ich kümmere mich liebevoll um dein Baby oder deine Kinder, damit du zur Ruhe kommst und neue Kraft schöpfen kannst.</p>
+    <a href="#betreuung" class="card-link">Mehr erfahren →</a>
+  </div>
+</div>
 </section><!-- PROCESS --><section id="process">
   <h2>Ablauf</h2>
   <div class="timeline">
@@ -387,7 +526,162 @@
     <div class="step">3. Individuelle Begleitung</div>
     <div class="step">4. Geburt & Wochenbett Unterstützung</div>
   </div>
-</section><!-- CTA --><section class="cta">
+
+</section>
+<section id="kinderwunsch" class="detail-section">
+  <h2>Kinderwunsch & Planung</h2>
+  <p>
+    Dein Wunsch nach einem Kind ist etwas ganz Besonderes. Ich begleite dich dabei, Vertrauen in deinen Körper zu entwickeln, deinen Zyklus besser zu verstehen und dich innerlich auf diese Reise vorzubereiten. Gemeinsam schaffen wir eine stabile, ruhige Basis – für dich und dein zukünftiges Baby.
+  </p>
+</section>
+
+
+<section id="schwangerschaft" class="detail-section">
+  <h2>Schwangerschaftsbegleitung</h2>
+  <p>
+    Diese Zeit darf sich sicher und getragen anfühlen. Ich bin an deiner Seite mit Gesprächen, kleinen Ritualen und liebevoller Begleitung – damit du dich nicht allein fühlst und deiner eigenen Stärke vertrauen kannst.
+  </p>
+</section>
+
+
+<section id="geburt" class="detail-section">
+  <h2>Geburtsbegleitung</h2>
+  <p>
+    Während deiner Geburt bin ich konstant an deiner Seite. Ich halte den Raum für dich, gebe dir Sicherheit und unterstütze dich dabei, deinen eigenen Weg durch die Geburt zu finden – ruhig, intuitiv und in deinem Tempo.
+  </p>
+</section>
+
+
+<section id="wochenbett" class="detail-section">
+  <h2>Wochenbett & Nachsorge</h2>
+  <p>
+    Nach der Geburt beginnt das Ankommen. Ich unterstütze dich im Alltag, begleite dich emotional und helfe dir dabei, dich in deiner neuen Rolle sicher zu fühlen – ohne Druck, in deinem eigenen Rhythmus.
+  </p>
+</section>
+
+
+<section id="kraeuter" class="detail-section">
+  <h2>Kräuter & ganzheitliche Begleitung</h2>
+  <p>
+    Die Natur bietet sanfte Unterstützung für Körper und Seele. Ich zeige dir, wie du Kräuter gezielt in Schwangerschaft, Geburt und Wochenbett einsetzen kannst – für mehr Ruhe, Heilung und Wohlbefinden.
+  </p>
+</section>
+
+
+<section id="betreuung" class="detail-section">
+  <h2>Kinderbetreuung & Entlastung</h2>
+  <p>
+    Manchmal brauchst du einfach eine Pause. Ich kümmere mich liebevoll um dein Baby oder deine Kinder, damit du durchatmen, schlafen oder Zeit für dich finden kannst – in dem Wissen, dass dein Kind gut aufgehoben ist.
+  </p>
+</section>
+<section id="preise" class="soft-pricing">
+
+  <h2>Begleitung & Orientierung</h2>
+
+  <p class="intro">
+    Jede Begleitung ist individuell. Die folgenden Angaben geben dir eine Orientierung – der genaue Umfang entsteht immer gemeinsam im Gespräch.
+  </p>
+
+  <div class="price-grid">
+
+    <div class="price-card">
+      <h3>🤍 Kinderwunsch & Planung</h3>
+      <p class="price">ab 80€ pro Termin</p>
+      <p>Einzelbegleitung oder individuelle Vorbereitung auf deinen Weg zum Wunschkind.</p>
+      <a href="#contact" class="price-btn">🤍 Erstgespräch anfragen</a>
+    </div>
+
+    <div class="price-card">
+      <h3>🤰 Schwangerschaftsbegleitung</h3>
+      <p class="price">ab 60€ pro Termin</p>
+      <p>Oder Pakete ab ca. 450€ für eine kontinuierliche Begleitung.</p>
+      <a href="#contact" class="price-btn">🤍 Erstgespräch anfragen</a>
+    </div>
+
+    <div class="price-card highlight">
+      <h3>🌸 Geburtsbegleitung</h3>
+      <p class="price">ab 850€</p>
+      <p>Individuelle 1:1 Begleitung inkl. Rufbereitschaft und Geburtspräsenz.</p>
+      <a href="#contact" class="price-btn">🤍 Erstgespräch anfragen</a>
+    </div>
+
+    <div class="price-card">
+      <h3>🕊 Wochenbett & Nachsorge</h3>
+      <p class="price">ab 50€ pro Besuch</p>
+      <p>Unterstützung im Alltag, emotionaler Halt und praktische Hilfe.</p>
+      <a href="#contact" class="price-btn">🤍 Erstgespräch anfragen</a>
+    </div>
+
+  </div>
+
+</section>
+<section class="pricing-trust">
+
+  <h2>Wie die Preise entstehen</h2>
+
+  <p>
+    Eine Doula-Begleitung ist keine standardisierte Dienstleistung. Jede Familie hat unterschiedliche Bedürfnisse, Intensität und Dauer der Begleitung.
+  </p>
+
+  <p>
+    Deshalb entstehen Preise bei mir individuell – abhängig davon, wie viel Begleitung du dir wünschst und in welcher Lebenssituation du dich befindest.
+  </p>
+
+  <p>
+    Im Erstgespräch schauen wir gemeinsam, was für dich wirklich sinnvoll ist – ohne Druck, ohne Verpflichtung.
+  </p>
+
+</section>
+<section class="pricing-cta">
+
+  <h2>Wenn du dich angesprochen fühlst</h2>
+
+  <p>
+    Dann lass uns ganz unverbindlich sprechen. Ich nehme mir Zeit für dich und wir schauen gemeinsam, was du wirklich brauchst.
+  </p>
+
+  <a href="#contact" class="cta-button">🤍 Erstgespräch anfragen</a>
+
+</section>
+<section class="trust">
+
+  <h2>Du bist hier sicher aufgehoben</h2>
+
+  <div class="trust-grid">
+
+    <div class="trust-item">
+      🤍
+      <h3>Einfühlsame 1:1 Begleitung</h3>
+      <p>Du wirst nicht „durchgeschleust“, sondern individuell begleitet – mit Zeit, Ruhe und echter Aufmerksamkeit für deine Situation.</p>
+    </div>
+
+    <div class="trust-item">
+      🕊
+      <h3>Erfahrung & ganzheitlicher Ansatz</h3>
+      <p>Ich verbinde emotionale Begleitung mit praktischem Wissen aus Kräuterkunde, Körperarbeit und Geburtsvorbereitung.</p>
+    </div>
+
+    <div class="trust-item">
+      🌿
+      <h3>Keine medizinische Hektik</h3>
+      <p>Bei mir gibt es keinen Zeitdruck und keine klinische Routine – nur Raum für dich, dein Tempo und deine Entscheidungen.</p>
+    </div>
+
+    <div class="trust-item">
+      🤱
+      <h3>Begleitung statt Bewertung</h3>
+      <p>Egal wo du gerade stehst – ich begleite dich ohne Urteil, ohne Druck und mit voller Wertschätzung.</p>
+    </div>
+
+  </div>
+
+  <div class="trust-note">
+    ✨ Mein Ziel ist nicht nur eine gute Geburt – sondern dass du dich sicher, gesehen und getragen fühlst.
+  </div>
+
+</section>
+
+<!-- CTA --><section class="cta">
   <h2>Bereit für deine Reise?</h2>
   <p>Ich bin an deiner Seite – ruhig, präsent und stärkend.</p>
   <a class="btn" href="#contact">Kontakt aufnehmen</a>
@@ -416,7 +710,6 @@
   <textarea name="message" rows="6"
     placeholder="Erzähl mir ein bisschen über dich, deine Situation und was du dir wünschst..."></textarea>
 
-  <!-- Anti-Spam Honeypot (wichtig!) -->
   <input type="text" name="_gotcha" style="display:none" />
 
   <button type="submit">💌 Nachricht senden</button>
