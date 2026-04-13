@@ -1,0 +1,463 @@
+<!DOCTYPE html><html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lichtwesen Doula</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">  <style>
+    :root{
+      --bg:#f7f2ec;
+      --card:#ffffff;
+      --sand:#e9ddd2;
+      --accent:#c19a7b;
+      --text:#4f4038;
+      --muted:#7a6a60;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:Inter,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    h1,h2,h3{font-family:'Playfair Display',serif;}
+
+    a{text-decoration:none;color:inherit;}
+
+    .nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:rgba(247,242,236,0.85);
+      backdrop-filter:blur(10px);
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      padding:12px;
+      z-index:1000;
+      font-size:13px;
+    }
+
+    .hero{
+      height:100vh;
+      background:url('./assets/baby2.jpg?auto=format&fit=crop&w=1800&q=80') center/cover;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      position:relative;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom,rgba(0,0,0,0.35),rgba(0,0,0,0.6));
+    }
+
+    .hero-content{position:relative;max-width:850px;padding:20px;}
+
+    .hero h1{font-size:3.5rem;}
+
+    .hero p{font-size:1.2rem;margin-top:15px;}
+
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 22px;
+      border-radius:40px;
+      background:var(--accent);
+      color:white;
+    }
+
+    section{padding:90px 20px;max-width:1100px;margin:auto;}
+
+    h2{text-align:center;margin-bottom:40px;font-size:2.4rem;}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+
+    .card{background:#fff;padding:20px;border-radius:14px;box-shadow:var(--shadow);}
+
+    .timeline{display:flex;flex-direction:column;gap:12px;}
+
+    .step{background:#fff;padding:18px;border-radius:12px;box-shadow:var(--shadow);}
+
+    .cta{background:var(--sand);text-align:center;padding:70px 20px;border-radius:20px;}
+
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      width:60px;
+      height:60px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    input,textarea{
+      width:100%;
+      padding:12px;
+      margin-bottom:10px;
+      border-radius:10px;
+      border:none;
+    }
+
+    form{max-width:600px;margin:auto;}
+.story {
+  padding: 80px 0;
+}
+
+.story h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.story-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.story-track {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  gap: 20px;
+  width: 100%;
+}
+
+.story-item {
+  min-width: 80%;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.story-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-text {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-size: 22px;
+  z-index: 10;
+}
+
+.story-btn.left {
+  left: 10px;
+}
+
+.story-btn.right {
+  right: 10px;
+}
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form h3 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.contact-form p {
+  color: #7a6a60;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-family: inherit;
+}
+
+.contact-form button {
+  padding: 14px;
+  border: none;
+  border-radius: 40px;
+  background: #c19a7b;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+}
+
+.small-note {
+  font-size: 12px;
+  color: #7a6a60;
+  text-align: center;
+}
+.floating-footer {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  z-index: 9999;
+}
+
+.ff-btn {
+  padding: 10px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.ff-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Primary (WhatsApp Kontakt) */
+.primary {
+  background: #25D366;
+  color: white;
+}
+
+/* Community */
+.secondary {
+  background: #e9ddd2;
+  color: #4f4038;
+}
+
+/* Telegram */
+.tertiary {
+  background: #229ED9;
+  color: white;
+}
+@media (max-width: 600px) {
+  .floating-footer {
+    width: 95%;
+    justify-content: space-between;
+    border-radius: 20px;
+  }
+
+  .ff-btn {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+  </style></head>
+<body><div class="nav">
+  <a href="#about">Über mich</a>
+  <a href="#services">Angebote</a>
+  <a href="#process">Ablauf</a>
+  <a href="#contact">Kontakt</a>
+</div><!-- HERO --><div class="hero">
+  <div class="hero-content">
+    <h1>Lichtwesen Doula</h1>
+    <p>Geburt ist ein Übergang – ein kraftvoller Moment zwischen zwei Welten.</p>
+    <p>Ich begleite dich einfühlsam durch Schwangerschaft, Geburt und Wochenbett, damit du dich sicher, gestärkt und verstanden fühlst.</p>
+    <a class="btn" href="#contact">Erstgespräch</a>
+  </div>
+</div><!-- ABOUT --><section id="about">
+  <h2>Über mich</h2>
+  <p>
+    Mein Name ist Leonie. Ich bin Mama eines kleinen Wirbelwinds und lebe mit meiner Familie in Schweinfurt. 
+    Meine Reise begann 2020 mit einer sehr prägenden, traumatischen Geburtserfahrung. Diese Erfahrung hat in mir den tiefen Wunsch geweckt, Frauen eine sichere, selbstbestimmte und liebevolle Geburt zu ermöglichen.
+  </p>
+  <p>
+    Ich begleite Frauen mit Herz, Intuition und Wissen durch Schwangerschaft, Geburt und Wochenbett. Kräuterheilkunde, ganzheitliches Denken und emotionale Begleitung sind ein wichtiger Teil meiner Arbeit.
+  </p>
+</section><!-- SERVICES --><section id="services">
+<section class="story">
+  <h2>Deine Reise</h2>
+
+  <div class="story-wrapper">
+
+    <button class="story-btn left" onclick="scrollStory(-1)">‹</button>
+
+    <div class="story-track" id="storyTrack">
+
+      <div class="story-item">
+        <img src="./assets/pregnant1.jpg?auto=format&fit=crop&w=1200&q=80">
+        <div class="story-text">
+          <h3>Ankommen in der Schwangerschaft</h3>
+          <p>Sanftes Einstimmen, Vertrauen in deinen Körper entwickeln.</p>
+        </div>
+      </div>
+
+      <div class="story-item">
+        <img src="./assets/calm1.jpg?auto=format&fit=crop&w=1200&q=80">
+        <div class="story-text">
+          <h3>Vorbereitung auf die Geburt</h3>
+          <p>Ruhe, Wissen und innere Stabilität für deinen Weg.</p>
+        </div>
+      </div>
+
+      <div class="story-item">
+        <img src="./assets/baby1.jpg?auto=format&fit=crop&w=1200&q=80">
+        <div class="story-text">
+          <h3>Die Geburt</h3>
+          <p>Ich bin an deiner Seite – ruhig, präsent, stärkend.</p>
+        </div>
+      </div>
+
+      <div class="story-item">
+        <img src="./assets/baby2.jpg?auto=format&fit=crop&w=1200&q=80">
+        <div class="story-text">
+          <h3>Wochenbett & Ankommen</h3>
+          <p>Heilung, Ruhe und sanftes Ankommen als Familie.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="story-btn right" onclick="scrollStory(1)">›</button>
+
+  </div>
+</section>
+  <h2>Angebote</h2>
+  <div class="grid">
+    <div class="card">
+      🤰 Schwangerschaftsbegleitung
+      <p>Einfühlsame Begleitung, Rituale, Gespräche, Kräuterwissen und emotionale Unterstützung.</p>
+    </div>
+    <div class="card">
+      🌸 Geburtsbegleitung
+      <p>Ruhige, konstante Präsenz während deiner Geburt – dein sicherer Anker.</p>
+    </div>
+    <div class="card">
+      🕊 Wochenbett
+      <p>Unterstützung im Alltag, Stillhilfe, emotionale Stabilität und Entlastung.</p>
+    </div>
+    <div class="card">
+      🌿 Kräuter & ganzheitliche Begleitung
+      <p>Sanfte Pflanzenkraft für Schwangerschaft, Geburt und Rückbildung.</p>
+    </div>
+  </div>
+</section><!-- PROCESS --><section id="process">
+  <h2>Ablauf</h2>
+  <div class="timeline">
+    <div class="step">1. Erstkontakt</div>
+    <div class="step">2. Kennenlerngespräch</div>
+    <div class="step">3. Individuelle Begleitung</div>
+    <div class="step">4. Geburt & Wochenbett Unterstützung</div>
+  </div>
+</section><!-- CTA --><section class="cta">
+  <h2>Bereit für deine Reise?</h2>
+  <p>Ich bin an deiner Seite – ruhig, präsent und stärkend.</p>
+  <a class="btn" href="#contact">Kontakt aufnehmen</a>
+</section><!-- CONTACT --><section id="contact">
+  <h2>Kontakt</h2>
+<form action="https://formspree.io/f/xyklyzwg" method="POST" class="contact-form">
+
+  <h3>Erzähl mir ein bisschen von dir</h3>
+  <p>Ganz unverbindlich – ich melde mich liebevoll bei dir zurück.</p>
+
+  <input type="text" name="name" placeholder="Dein Name" required />
+
+  <input type="email" name="email" placeholder="Deine E-Mail" required />
+
+  <input type="text" name="due_date" placeholder="Errechneter Geburtstermin (optional)" />
+
+  <select name="topic">
+    <option value="">Wobei wünschst du dir Begleitung?</option>
+    <option>Schwangerschaft</option>
+    <option>Geburtsbegleitung</option>
+    <option>Wochenbett</option>
+    <option>Kinderwunsch</option>
+    <option>Nur eine Frage</option>
+  </select>
+
+  <textarea name="message" rows="6"
+    placeholder="Erzähl mir ein bisschen über dich, deine Situation und was du dir wünschst..."></textarea>
+
+  <!-- Anti-Spam Honeypot (wichtig!) -->
+  <input type="text" name="_gotcha" style="display:none" />
+
+  <button type="submit">💌 Nachricht senden</button>
+
+  <p class="small-note">
+    Ich antworte dir so schnell wie möglich persönlich.
+  </p>
+
+</form>
+</section>
+
+<div class="floating-footer">
+
+  <a class="ff-btn primary"  href="https://wa.me/4915739643278?text=Hallo%20ich%20würde%20gern%20ein%20Erstgespräch%20mit%20dir%20vereinbaren"
+     target="_blank">
+    💬 Kontakt
+  </a>
+
+  <a class="ff-btn secondary" 
+     href="https://chat.whatsapp.com/CHQKg6S6I8DKIA5dB7PADB" 
+     target="_blank">
+    🌿 Community
+  </a>
+
+  <a class="ff-btn tertiary" 
+     href="https://t.me/lichtwesendoula" 
+     target="_blank">
+    ✨ Telegram
+  </a>
+
+</div>
+<script>
+  const track = document.getElementById("storyTrack");
+
+  function scrollStory(direction) {
+    const width = track.querySelector(".story-item").offsetWidth + 20;
+    track.scrollBy({
+      left: direction * width,
+      behavior: "smooth"
+    });
+  }
+</script>
+</body>
+</html>
