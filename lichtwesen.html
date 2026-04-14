@@ -15,6 +15,69 @@
       --shadow:0 10px 30px rgba(0,0,0,0.08);
     }
 
+.feedback-btn {
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  background: #c19a7b;
+  color: white;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENT */
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+/* CLOSE */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* INPUTS */
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+/* BUTTON */
+.modal-content button {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+  background: #c19a7b;
+  color: white;
+  cursor: pointer;
+}
     *{margin:0;padding:0;box-sizing:border-box;}
 
     body{
@@ -803,8 +866,8 @@ html {
     Dann musst du noch nichts entscheiden. Schreib mir einfach und wir schauen gemeinsam, ob und wie eine Begleitung für dich passt.
   </p>
 
-  <a class="btn" href="https://wa.me/4915739643278?text=Hallo%20ich%20würde%20gern%20ein%20Erstgespräch%20mit%20dir%20vereinbaren">
-    🌹 Unverbindlich schreiben
+  <a class="feedback-btn" href="https://wa.me/4915739643278?text=Hallo%20ich%20würde%20gern%20ein%20Erstgespräch%20mit%20dir%20vereinbaren">
+     🌹 Unverbindlich schreiben
   </a>
 
 </section>
@@ -872,7 +935,9 @@ html {
     <button class="slider-btn right" onclick="moveSlide(1)">›</button>
 
   </div>
-
+<button class="feedback-btn" onclick="openFeedback()">
+  ⭐ Bewertung / Feedback hinterlassen
+</button>
 </section>
 <section class="trust">
 
@@ -970,8 +1035,76 @@ html {
 
 </form>
 </section>
+<div id="feedbackModal" class="modal">
 
+  <div class="modal-content">
+
+    <span class="close" onclick="closeFeedback()">&times;</span>
+
+    <div id="feedbackForm">
+
+      <h2>Dein Feedback 🤍</h2>
+
+      <p>
+        Wenn du möchtest, kannst du hier deine Erfahrung teilen.
+        Dein Feedback hilft anderen Familien bei ihrer Entscheidung.
+      </p>
+
+      <input type="text" placeholder="Dein Name (oder anonym)" />
+      
+      <select>
+        <option>Wie war deine Erfahrung?</option>
+        <option>Sehr positiv</option>
+        <option>Positiv</option>
+        <option>Neutral</option>
+        <option>Herausfordernd, aber hilfreich</option>
+      </select>
+
+      <textarea rows="5" placeholder="Deine Bewertung / Erfahrung..."></textarea>
+
+      <button onclick="submitFeedback()">Absenden</button>
+
+    </div>
+
+    <div id="thankYou" style="display:none; text-align:center;">
+      <h2>Danke für dein Feedback 🤍</h2>
+      <p>
+        Deine Rückmeldung wird geprüft und kann – mit deinem Einverständnis –
+        auf der Website veröffentlicht werden.
+      </p>
+    </div>
+
+  </div>
+
+</div>
 <script>
+function openFeedback() {
+  document.getElementById("feedbackModal").style.display = "flex";
+}
+
+function closeFeedback() {
+  document.getElementById("feedbackModal").style.display = "none";
+}
+
+function submitFeedback() {
+  document.getElementById("feedbackForm").style.display = "none";
+  document.getElementById("thankYou").style.display = "block";
+
+  // Dummy delay (fühlt sich realistischer an)
+  setTimeout(() => {
+    closeFeedback();
+    document.getElementById("feedbackForm").style.display = "block";
+    document.getElementById("thankYou").style.display = "none";
+  }, 3000);
+}
+
+// Close on outside click
+window.onclick = function(event) {
+  const modal = document.getElementById("feedbackModal");
+  if (event.target === modal) {
+    closeFeedback();
+  }
+}
 let currentSlide = 0;
 
 function moveSlide(direction) {
