@@ -222,69 +222,75 @@
   padding: 80px 0;
 }
 
-.story h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.story-wrapper {
-  position: relative;
+.story-item {
   display: flex;
   align-items: center;
-}
-
-.story-track {
-  display: flex;
+  justify-content: space-between;
+  position: relative;
   overflow: hidden;
-  scroll-behavior: smooth;
-  gap: 20px;
-  width: 100%;
-}
-
-.story-item {
-  min-width: 80%;
-  background: #fff;
   border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.story-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.story-content {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .story-text {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.85); /* Weißer Hintergrund mit Transparenz */
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 2; /* Text wird über dem Bild angezeigt */
 }
 
-.story-btn {
+.story-text h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.story-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.story-img {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: white;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  cursor: pointer;
-  font-size: 22px;
-  z-index: 10;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+  z-index: 1;
+  transition: all 0.3s ease;
 }
 
-.story-btn.left {
-  left: 10px;
+.story-item:hover .story-img {
+  transform: scale(1.1); /* Etwas vergrößern, um einen tollen Hover-Effekt zu erzielen */
 }
 
-.story-btn.right {
-  right: 10px;
+.story-item:hover .story-text {
+  background: rgba(255, 255, 255, 0.9); /* Hintergrund intensiver, wenn der Text über das Bild geht */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .story-item {
+    flex-direction: column;
+  }
+
+  .story-text {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .story-img {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
 }
 .contact-form {
   max-width: 600px;
